@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Preferences Form (Static Preview)</title>
+  <style>
+    :root {
+      --bg: #ffffff;
+      --fg: #222222;
+      --accent: #3b82f6;
+      --border: #e5e7eb;
+      --muted: #6b7280;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+      color: var(--fg);
+      background: #f8fafc;
+      line-height: 1.5;
+    }
+
+    .container {
+      max-width: 880px;
+      margin: 40px auto;
+      padding: 24px;
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(2, 6, 23, 0.06);
+    }
+
+    .header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: 1.25rem;
+      margin: 0;
+    }
+    .subtle {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    /* Static preview area */
+    .preview {
+      border: 1px dashed var(--border);
+      border-radius: 12px;
+      padding: 20px;
+      background: var(--bg);
+      color: var(--fg);
+      margin-bottom: 24px;
+    }
+    .preview-title {
+      font-weight: 600;
+      margin: 0 0 8px;
+    }
+    .preview-note {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    form {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+    }
+
+    fieldset {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px;
+      margin: 0;
+    }
+    legend {
+      padding: 0 8px;
+      font-weight: 600;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .control {
+      display: grid;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+    label {
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    input[type="color"] {
+      width: 100%;
+      height: 40px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      cursor: pointer;
+      background: #fff;
+    }
+
+    select {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: #fff;
+      font-size: 1rem;
+    }
+
+    .actions {
+      grid-column: 1 / -1;
+      display: flex;
+      gap: 12px;
+      justify-content: flex-end;
+      margin-top: 8px;
+    }
+    button {
+      appearance: none;
+      border: 1px solid var(--border);
+      background: #fff;
+      padding: 10px 16px;
+      border-radius: 999px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .btn-primary {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #fff;
+    }
+    .btn-ghost:hover,
+    .btn-primary:hover {
+      filter: brightness(0.97);
+    }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <div class="header">
+      <h1>Custom Appearance</h1>
+      <p class="subtle">67130500071 — Chayanon Maksakarn</p>
+    </div>
+
+    <!-- Static Preview -->
+    <section class="preview" id="preview">
+      <h2 class="preview-title">ตัวอย่างการแสดงผล</h2>
+      <p class="preview-note">
+        * พรีวิวนี้เป็นแบบคงที่ (ไม่มี JavaScript) — เมื่อคุณเขียน JS เชื่อมกับ id ต่าง ๆ แล้วจะเห็นผลจริง
+      </p>
+      <p style="margin-top:12px">
+        “โดยที่ประชาชนแห่งสหประชาชาติได้ยืนยันอีกครั้งไว้ในกฎบัตรถึงศรัทธาในสิทธิมนุษยชนขั้นพื้นฐาน”
+      </p>
+    </section>
+
+    <!-- Form -->
+    <form id="preferencesForm" action="#" method="post" novalidate>
+      <fieldset>
+        <legend>สีพื้นหลัง (Background Color)</legend>
+        <div class="control">
+          <label for="bgColor">เลือกสีพื้นหลัง</label>
+          <input type="color" id="bgColor" name="background_color" value="#ffffff">
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>สีตัวอักษร (Font Color)</legend>
+        <div class="control">
+          <label for="fontColor">เลือกสีตัวอักษร</label>
+          <input type="color" id="fontColor" name="font_color" value="#222222">
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>ขนาดตัวอักษร (Font Size)</legend>
+        <div class="control">
+          <label for="fontSize">เลือกขนาด</label>
+          <select name="font_size" id="fontSize">
+            <option value="">-- เลือกขนาด --</option>
+            <option value="small">Small</option>
+            <option value="medium">Medium</option>
+            <option value="large">Large</option>
+          </select>
+        </div>
+      </fieldset>
+
+      <div class="actions">
+        <button class="btn-ghost">Reset</button>
+        <button class="btn-primary">Save</button>
+      </div>
+    </form>
+  </main>
+<script src="./main.js"></script>
+</body>
+</html>
