@@ -1,0 +1,31 @@
+---------------------------------------------------------
+WEEK8 DOM (Cont.)
+---------------------------------------------------------
+week8 (Directory)
+| - lesson2_doms_student (Directory)
+|   | ปรเจคที่อาจารย์ให้ทำกลับไปเป็นการบ้าน
+| - nodeType (Directory)
+| - traverseNode (Directory)
+|   | - Inclass - เนื้อหาที่เรียนในคาบ
+|   | - Practice
+---------------------------------------------------------
+
+ต่อจากสัปดาห์ก่อนเรื่อง DOM โดยจะเน้นไปในเรื่องของ nodeType, TraverseNode เป็นหลัก
+
+Node Types
+เมื่อ Browser โหลด HTML เข้ามามันจะสร้าง TreeDOM 
+โดยทุกอย่างที่อยู่ใน HTML จะแทนที่ด้วย Node
+
+Property หลักๆ ของ Node 
+nodeName - ชื่อของ node เช่น "DIV", "#text", "SPAN"
+nodeType - ตัวเลขบอกชนิดของ node
+nodeValue - ค่าของ node (ใช้กับ text หรือ attribute node เท่านั้น)
+
+ชนิดของ Node
+ELEMENT_NODE โหนดแท็ก HTML
+ATTRIBUTE_NODE - โหนดแอตทริบิวต์
+TEXT_NOD - ข้อความระหว่างแท็ก
+COMMENT_NODE - คอมเมนต์ใน HTML
+DOCUMENT_NODE - ตัวแทนทั้งเอกสาร HTML
+DOCUMENT_TYPE_NODE - ใช้ระบุประเภทเอกสาร อย่าง <!DOCTYPE html>
+---------------------------------------------------------

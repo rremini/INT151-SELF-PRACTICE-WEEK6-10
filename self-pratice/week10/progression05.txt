@@ -1,0 +1,45 @@
+---------------------------------------------------------
+WEEK10 - Client Storage
+---------------------------------------------------------
+week10 (Directory)
+| - Inclass (Directory)
+|   | index.html สำหรับเก็บไฟล์ HTML ของโปรเจค
+|   | cookieUtill.js โค๊ดอาจารย์ฺสำหรับฝึก Cookies
+|   | localstorage.js ฝึกเรื่อง localstorage ในคล่าส
+|   | main.js โค๊ดในส่วนของ Cookies ในคลาส
+| - PROJ-week10 (Directory)
+|   | - index.html สำหรับเก็บไฟล์ HTML ของโปรเจค
+|   | - main.js ไฟล์ที่รวมเนื้อหาของทุกสัปดาห์มาทำเป็นโปรเจค
+
+---------------------------------------------------------
+
+ในสัปดาห์นี้อาจารย์จะสอนเรื่อง Client-Side Storage คือการจัดเก็บข้อมูลบนเครื่องผู้ใช้ (ฝั่ง client) โดยใช้ JavaScript APIs เช่น
+
+Cookies, Session Storage, และ Local Storage
+
+Methods ที่สำคัญที่ได้เรียนรู้เพิ่มเติม + หาแหล่งความรู้ภายนอกในสัปดาห์นี้ (localStorage + sessionStorage)
+
+- setItem(key, value)
+เก็บข้อมูล (key/value) ลงใน storage
+
+- getItem(key)
+ดึงค่าที่เก็บไว้ตาม key ถ้าไม่มีจะคืนค่า null
+
+- removeItem(key)
+ลบข้อมูลที่เก็บไว้ภายใต้ key นั้น
+
+- clear()
+ลบข้อมูลทั้งหมดใน storage นั้น (ทั้งหมดของ localStorage หรือ sessionStorage)
+
+----------------------------
+EXAMPLE
+----------------------------
+localStorage.setItem("theme", "dark"); // เก็บ้ข้อมูลธีมเอาไว้
+
+const currentTheme = localStorage.getItem("theme");
+console.log("Current theme:", currentTheme); // Output: Current theme: dark
+
+localStorage.removeItem("theme"); // เลิกการใช้ธีมนั้น
+
+localStorage.clear(); // ล้างธีม
+---------------------------------------------------------

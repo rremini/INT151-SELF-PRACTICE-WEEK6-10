@@ -1,0 +1,49 @@
+---------------------------------------------------------
+WEEK9 - Events
+---------------------------------------------------------
+week9 (Directory)
+| - Inclass (Directory)
+|   | index.html สำหรับเก็บไฟล์ HTML ของโปรเจค
+|   | events.js ไฟล์ JS เรียนเรื่อง Events ในคล่าส
+| - lesson3_events_student (Directory)
+|   | - โปรเจคที่อาจารย์ให้ทำกลับไปเป็นการบ้าน
+| - Pratice (Directory)
+|   | - 01
+|   | - 02
+---------------------------------------------------------
+
+ในสัปดาห์นี้อาจารย์จะสอนเรื่อง Events คือสิ่งที่เกิดขึ้นในหน้าเว็บ เช่น ผู้ใช้คลิก กดปุ่ม พิมพ์ข้อความ หรือหน้าเว็บโหลดเสร็จ
+JavaScript จะกระทำเหตุการณ์เหล่านี้ผ่าน Event Listeners / Handlers
+และเรียกใช้ฟังก์ชันเมื่อเหตุการณ์นั้นเกิดขึ้น
+
+Event Handlers & Listeners จะมี 3 วิธีการอยู่หลักๆ 
+Inline HTML Handler - เขียนในแท็ก
+Property-based Handler - ใช้ผ่าน property เช่น
+addEventListener() / removeEventListener() - ใช้ได้หลาย handler และควบคุม phase ได้ รวมถึงได้ใช้บ่อย
+
+Methods ที่สำคัญที่ได้เรียนรู้เพิ่มเติม + หาแหล่งความรู้ภายนอกในสัปดาห์นี้
+
+- addEventListener()
+ฟัง event ที่เกิดขึ้นบน element
+
+EX:
+const button = document.getElementById('myButton')
+button.addEventListener('click', () => {
+  console.log('Button clicked')
+
+- removeEventListener()
+ยกเลิก event handler ที่เคยผูกไว้
+
+EX:
+const btn = document.getElementById('myBtn')
+function handler() { console.log('Clicked!') }\
+
+Event Object
+มื่อเกิด event ฟังก์ชันที่ถูกเรียกจะได้รับ object ที่มีข้อมูลเกี่ยวกับเหตุการณ์นั้น
+
+event.type - ชื่อเหตุการณ์ เช่น "click", "keyup"
+event.target - Element ที่เกิด event จริง
+event.currentTarget - Element ที่ handler ถูกผูกไว้
+event.key - ปุ่มที่ผู้ใช้กดบน keyboard
+event.preventDefault() - ยกเลิกสิ่งที่ทำเริ่มต้น เช่น การ submit form
+---------------------------------------------------------

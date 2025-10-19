@@ -1,0 +1,127 @@
+---------------------------------------------------------
+WEEK8 DOM (Cont.)
+---------------------------------------------------------
+week8 (Directory)
+| - lesson2_doms_student (Directory)
+|   | ปรเจคที่อาจารย์ให้ทำกลับไปเป็นการบ้าน
+| - nodeType (Directory)
+| - traverseNode (Directory)
+|   | - Inclass - เนื้อหาที่เรียนในคาบ
+|   | - Practice
+---------------------------------------------------------
+
+ต่อจากสัปดาห์ก่อนเรื่อง DOM โดยจะเน้นไปในเรื่องของ nodeType, TraverseNode เป็นหลัก
+
+Node Types
+เมื่อ Browser โหลด HTML เข้ามามันจะสร้าง TreeDOM 
+โดยทุกอย่างที่อยู่ใน HTML จะแทนที่ด้วย Node
+
+Property หลักๆ ของ Node 
+nodeName - ชื่อของ node เช่น "DIV", "#text", "SPAN"
+nodeType - ตัวเลขบอกชนิดของ node
+nodeValue - ค่าของ node (ใช้กับ text หรือ attribute node เท่านั้น)
+
+ชนิดของ Node
+ELEMENT_NODE โหนดแท็ก HTML
+ATTRIBUTE_NODE - โหนดแอตทริบิวต์
+TEXT_NOD - ข้อความระหว่างแท็ก
+COMMENT_NODE - คอมเมนต์ใน HTML
+DOCUMENT_NODE - ตัวแทนทั้งเอกสาร HTML
+DOCUMENT_TYPE_NODE - ใช้ระบุประเภทเอกสาร อย่าง <!DOCTYPE html>
+---------------------------------------------------------
+
+---------------------------------------------------------
+WEEK9 - Events
+---------------------------------------------------------
+week9 (Directory)
+| - Inclass (Directory)
+|   | index.html สำหรับเก็บไฟล์ HTML ของโปรเจค
+|   | events.js ไฟล์ JS เรียนเรื่อง Events ในคล่าส
+| - lesson3_events_student (Directory)
+|   | - โปรเจคที่อาจารย์ให้ทำกลับไปเป็นการบ้าน
+| - Pratice (Directory)
+|   | - 01
+|   | - 02
+---------------------------------------------------------
+
+ในสัปดาห์นี้อาจารย์จะสอนเรื่อง Events คือสิ่งที่เกิดขึ้นในหน้าเว็บ เช่น ผู้ใช้คลิก กดปุ่ม พิมพ์ข้อความ หรือหน้าเว็บโหลดเสร็จ
+JavaScript จะกระทำเหตุการณ์เหล่านี้ผ่าน Event Listeners / Handlers
+และเรียกใช้ฟังก์ชันเมื่อเหตุการณ์นั้นเกิดขึ้น
+
+Event Handlers & Listeners จะมี 3 วิธีการอยู่หลักๆ 
+Inline HTML Handler - เขียนในแท็ก
+Property-based Handler - ใช้ผ่าน property เช่น
+addEventListener() / removeEventListener() - ใช้ได้หลาย handler และควบคุม phase ได้ รวมถึงได้ใช้บ่อย
+
+Methods ที่สำคัญที่ได้เรียนรู้เพิ่มเติม + หาแหล่งความรู้ภายนอกในสัปดาห์นี้
+
+- addEventListener()
+ฟัง event ที่เกิดขึ้นบน element
+
+EX:
+const button = document.getElementById('myButton')
+button.addEventListener('click', () => {
+  console.log('Button clicked')
+
+- removeEventListener()
+ยกเลิก event handler ที่เคยผูกไว้
+
+EX:
+const btn = document.getElementById('myBtn')
+function handler() { console.log('Clicked!') }\
+
+Event Object
+มื่อเกิด event ฟังก์ชันที่ถูกเรียกจะได้รับ object ที่มีข้อมูลเกี่ยวกับเหตุการณ์นั้น
+
+event.type - ชื่อเหตุการณ์ เช่น "click", "keyup"
+event.target - Element ที่เกิด event จริง
+event.currentTarget - Element ที่ handler ถูกผูกไว้
+event.key - ปุ่มที่ผู้ใช้กดบน keyboard
+event.preventDefault() - ยกเลิกสิ่งที่ทำเริ่มต้น เช่น การ submit form
+---------------------------------------------------------
+
+---------------------------------------------------------
+WEEK10 - Client Storage
+---------------------------------------------------------
+week10 (Directory)
+| - Inclass (Directory)
+|   | index.html สำหรับเก็บไฟล์ HTML ของโปรเจค
+|   | cookieUtill.js โค๊ดอาจารย์ฺสำหรับฝึก Cookies
+|   | localstorage.js ฝึกเรื่อง localstorage ในคล่าส
+|   | main.js โค๊ดในส่วนของ Cookies ในคลาส
+| - PROJ-week10 (Directory)
+|   | - index.html สำหรับเก็บไฟล์ HTML ของโปรเจค
+|   | - main.js ไฟล์ที่รวมเนื้อหาของทุกสัปดาห์มาทำเป็นโปรเจค
+
+---------------------------------------------------------
+
+ในสัปดาห์นี้อาจารย์จะสอนเรื่อง Client-Side Storage คือการจัดเก็บข้อมูลบนเครื่องผู้ใช้ (ฝั่ง client) โดยใช้ JavaScript APIs เช่น
+
+Cookies, Session Storage, และ Local Storage
+
+Methods ที่สำคัญที่ได้เรียนรู้เพิ่มเติม + หาแหล่งความรู้ภายนอกในสัปดาห์นี้ (localStorage + sessionStorage)
+
+- setItem(key, value)
+เก็บข้อมูล (key/value) ลงใน storage
+
+- getItem(key)
+ดึงค่าที่เก็บไว้ตาม key ถ้าไม่มีจะคืนค่า null
+
+- removeItem(key)
+ลบข้อมูลที่เก็บไว้ภายใต้ key นั้น
+
+- clear()
+ลบข้อมูลทั้งหมดใน storage นั้น (ทั้งหมดของ localStorage หรือ sessionStorage)
+
+----------------------------
+EXAMPLE
+----------------------------
+localStorage.setItem("theme", "dark"); // เก็บ้ข้อมูลธีมเอาไว้
+
+const currentTheme = localStorage.getItem("theme");
+console.log("Current theme:", currentTheme); // Output: Current theme: dark
+
+localStorage.removeItem("theme"); // เลิกการใช้ธีมนั้น
+
+localStorage.clear(); // ล้างธีม
+---------------------------------------------------------
