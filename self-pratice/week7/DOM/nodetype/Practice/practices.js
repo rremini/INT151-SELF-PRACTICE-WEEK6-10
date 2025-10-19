@@ -1,10 +1,10 @@
-let el = document.getElementById("drink")
-const allDrinks = el.children[1]
+const el = document.getElementById("drink")
+const allDrinks = el.children
 
 let teaDrink = allDrinks[1]
-console.log(teaDrink)
+console.log(teaDrink.textContent)
 
-console.log(teaDrink.previousElementSibling)
-console.log(teaDrink.nextElementSibling)
+console.log(teaDrink.previousElementSibling.textContent)
+console.log(teaDrink.nextElementSibling.textContent)
 console.log(teaDrink.parentElement)
  

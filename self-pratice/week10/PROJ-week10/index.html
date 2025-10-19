@@ -140,6 +140,10 @@
     .btn-primary:hover {
       filter: brightness(0.97);
     }
+    #preview-exmaple {
+    transition: font-size 0.3s ease;
+    }
+
   </style>
 </head>
 <body>
@@ -153,9 +157,9 @@
     <section class="preview" id="preview">
       <h2 class="preview-title">ตัวอย่างการแสดงผล</h2>
       <p class="preview-note">
-        * พรีวิวนี้เป็นแบบคงที่ (ไม่มี JavaScript) — เมื่อคุณเขียน JS เชื่อมกับ id ต่าง ๆ แล้วจะเห็นผลจริง
+        *พรีวิวนี้เป็นแบบคงที่ เมื่อคุณเขียน JS เชื่อมกับ id ต่าง ๆ แล้วจะเห็นผลจริง
       </p>
-      <p style="margin-top:12px">
+      <p style="margin-top:12px " id="preview-exmaple">
         “โดยที่ประชาชนแห่งสหประชาชาติได้ยืนยันอีกครั้งไว้ในกฎบัตรถึงศรัทธาในสิทธิมนุษยชนขั้นพื้นฐาน”
       </p>
     </section>
@@ -192,8 +196,8 @@
       </fieldset>
 
       <div class="actions">
-        <button class="btn-ghost">Reset</button>
-        <button class="btn-primary">Save</button>
+        <button type="reset" class="btn-ghost" id="resetBtn">Reset</button>
+        <button type="button" class="btn-primary" id="saveBtn">Save</button>
       </div>
     </form>
   </main>
